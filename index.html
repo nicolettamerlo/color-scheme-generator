@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script type='module' src="script.js"></script>
+    lin
+    <title>colors scheme generator</title>
+</head>
+<body>
+   <div id="schemeGenerator">
+        <div class="header" >
+            <h1>Colors Scheme Generator</h1>
+            <p class="subtitle">create an amazing colors scheme for your next project!</p>            
+        </div>
+        <div class="main">
+            <div class="palette"> 
+                <ul class="palette-swatches">
+                    <!--swatches here-->     
+                </ul>
+                <div class="palette-footer">
+                    <span class="palette-footer-type">analogous</span> 
+                    <button class="btn btn-modal fa fa-code" data-target="modal-values" id="modalValuesBtn"></button>
+                </div>
+            </div>
+            <hr class="separator">
+            <!--tools-->
+            <div class="row">
+                <div class="toolbox">
+                    <button class="tool btn fa-solid fa-lightbulb" id="desaturate"></button>
+                    <button class="tool btn fa-regular fa-lightbulb" id="saturate"></button>
+                    <p class="tools-descritpion">saturation</p>
+                </div>
+                <div class="indicator"></div>
+                <div class="toolbox">
+                    <button class="tool btn fa-solid fa-plus" id="lighten"></button>    
+                    <button class="tool btn fa-solid fa-minus" id="darken"></button>    
+                    <p class="tools-descritpion">lightness</p>                     
+                </div>
+            </div>
+            <div class="row" id="savedAlert">
+                <button class="tool btn fa-solid fa-shuffle" id="random"></button>    
+                <button class="btn fa fa-save" id="saveSwatch"></button>  
+                <button class="btn btn-modal fa fa-swatchbook" data-target="modal-swatchbook"></button> 
+                <button class="btn btn-modal fa-solid fa-fill-drip" data-target="modal-skins"></button>       
+            </div>
+            <hr class="separator">
+            <!--mode-->
+            <div class="row">
+                <input type="text" id="colorInput">  
+                <button class="btn btn-format" data-format="0" data-target="colorInput">HEX</button> 
+            </div>
+            <hr class="separator">
+            <!--scheme types-->
+            <div class="row">
+                <fieldset class="types">
+                    <legend>Select a color scheme type:</legend>
+                    <div>
+                        <input class="btn-radio" type="radio" name="schemeType" value="monochromatic" checked>
+                        <label for="monochromatic">monochromatic</label>
+                    </div>                
+                    <div>
+                        <input class="btn-radio" type="radio" name="schemeType" value="analogous">
+                        <label for="analogus">analogous</label>
+                    </div>       
+                    <div>
+                        <input class="btn-radio" type="radio" name="schemeType" value="splitcomplement">
+                        <label for="splitcomplement">split complement</label>
+                    </div>
+                    <div>
+                        <input class="btn-radio" type="radio" name="schemeType" value="triad">
+                        <label for="triad">triad</label>
+                    </div>  
+                    <div>
+                        <input class="btn-radio" type="radio" name="schemeType" value="tetrad">
+                        <label for="tetrad">tetrad</label>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+        <div class="modals">
+            <div class="modal modal-values d-none">
+                <div class="modal-container">
+                    <button class="btn-close btn-modal fa fa-xmark" data-target="modal-values"></button> 
+                    <h4>palette colors</h4>
+                    <div class="values-list">
+                        <!-- vlaues list items here-->
+                    </div>
+                    <button class="btn-format" id="btnFormatValues" data-target="formatValues" data-format="0">HEX</button>
+                </div>
+            </div>
+            <div class="modal modal-skins d-none">
+                <div class="modal-container">
+                    <button class="btn-close btn-modal fa fa-xmark" data-target="modal-skins"></button>               
+                    <h4>choose a skin</h4>
+                    <div class="skins-list">
+                        <!--skins-list items here-->
+                    </div>
+                </div>
+            </div>
+            <div class="modal modal-swatchbook d-none">
+                <div class="modal-container">
+                    <button class="btn-close btn-modal fa fa-xmark" data-target="modal-swatchbook"></button>
+                    <h4>your palettes</h4>
+                    <ul class="swatchbook-list">
+                        <!---custom palettes here-->
+                    </ul>
+                </div>
+            </div>
+        </div>
+   </div>
+</body>
+</html>

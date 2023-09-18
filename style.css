@@ -1,0 +1,377 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,500);
+:root {
+  --blue: #3a9dda;
+  --blue-dark: #0d4e76;
+  --gray: #ddddf7;
+  --gray-medium: #8787a9;
+  --gray-dark: #65657d;
+  --text-color: #42454c;
+  --black: #181717;
+}
+body {
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--text-color);
+  font-weight: 400;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+#schemeGenerator {
+  text-align: center;
+  padding: 1rem;
+}
+h1 {
+  font-size: 1.3rem;
+  margin-bottom: 0.4rem;
+}
+.subtitle {
+  color: var(--blue-dark);
+  font-weight: 400;
+  margin: 0 auto 0.9rem auto;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+h4 {
+  font-weight: 500;
+  padding: 0.6rem 0 0.6rem 0;
+  width: 100%;
+  border-bottom: 0.1rem solid white;
+  border-top-left-radius: 0.2rem;
+  border-top-right-radius: 0.2rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  background-color: var(--gray-medium);
+  color: var(--gray);
+}
+.main {
+  border-radius: 0.3rem;
+  overflow: hidden;
+  margin: 0 auto;
+  max-width: 20rem;
+  background-color: var(--black);
+  color: var(--gray);
+  border: 0.1rem solid var(--gray);
+  box-shadow: 0.1rem 0.1rem 0.5rem var(--gray-medium);
+}
+/********************
+    PALETTE
+********************/
+.palette {
+  max-width: 18rem;
+  position: relative;
+  margin: 0 auto;
+  padding: 1rem;
+}
+.palette-swatches {
+  height: 6rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+}
+.swatch {
+  border: 0.1rem solid transparent;
+  width: 100%;
+  border-top-left-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
+}
+.palette-footer {
+  background-color: var(--gray);
+  color: var(--text-color);
+  position: relative;
+  font-size: 0.9rem;
+  padding: 0.5rem;
+  width: 100%;
+  margin: 0 auto;
+  border-bottom-left-radius: 0.3rem;
+  border-bottom-right-radius: 0.3rem;
+}
+/********************
+    ROWS AND TOOLS
+*********************/
+.row {
+  position: relative;
+  display: flex;
+  margin: 1rem auto;
+  justify-content: center;
+  align-items: center;
+}
+.row:last-child {
+  margin-bottom: 0.5rem;
+}
+.toolbox {
+  position: relative;
+  margin-bottom: 1rem;
+}
+.tools-descritpion {
+  position: absolute;
+  top: 1.2rem;
+  left: 50%;
+  transform: translate(-50%);
+  font-size: 0.7rem;
+}
+.indicator {
+  width: 3rem;
+  height: 2rem;
+  margin: 0 1rem;
+  border: 0.1rem solid var(--gray);
+  border-radius: 0.2rem;
+}
+#colorInput {
+  font-size: 1rem;
+  color: var(--gray-dark);
+  font-family: inherit;
+  text-align: center;
+  height: 2.2rem;
+  border-radius: 0.2rem;
+  border: 0.1rem solid var(--gray);
+  background-color: var(--gray);
+}
+#colorInput:focus {
+  color: var(--text-color);
+  font-weight: 500;
+  background-color: white !important;
+  border: 0.1rem solid #7ab6df !important;
+  outline: 0.1rem solid var(--blue) !important;
+}
+.separator {
+  border: 0;
+  border-top: 0.1rem solid var(--gray);
+}
+/********************
+    BUTTONS
+*********************/
+.btn {
+  cursor: pointer;
+  height: 1.5rem;
+  width: 2rem;
+  margin: 0 0.4rem;
+  color: var(--text-color);
+  background-color: var(--gray);
+  border: 0.1rem solid var(--gray);
+  border-radius: 0.2rem;
+  box-shadow: 0 0.1rem var(--gray-medium);
+}
+.btn:hover {
+  color: white;
+  background-color: var(--gray-medium);
+  border: 0.1rem solid var(--gray-medium);
+}
+.btn:active {
+    transform: translate(0.1rem, 0.1rem);
+}
+.btn-format {
+  font-weight: 600;
+  width: unset;
+  height: 2rem;
+}
+#btnFormatValues {
+  font-weight: 600;
+  width: unset;
+  height: 2rem;
+  border-radius: 0.2rem;
+  color: var(--gray);
+  border: 0.1rem solid var(--gray-medium);
+  background-color: var(--gray-medium);
+  box-shadow: 0.1rem 0.1rem 0.2rem var(--gray-medium);
+}
+#btnFormatValues:hover {
+  border: 0.1rem solid var(--gray);
+  color: var(--gray);
+  background-color: var(--gray-dark);
+  box-shadow: none;
+}
+#btnFormatValues:active {
+      transform: translate(0.1rem, 0.1rem);
+}
+.btn-close {
+  color: var(--gray);
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  background-color: transparent;
+  font-size: 1.3rem;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  height: 1.3rem;
+  width: 1.2rem;
+  box-shadow: 0 0 0 beige;
+}
+.btn-close:hover {
+  color: white;
+  background-color: transparent;
+  box-shadow: 0 0 0 black;
+  border: 0;
+  transform: scale(1.2);
+}
+.btn-close:active{
+    transform: translate(0.1rem, 0.1rem);
+}
+#modalValuesBtn {
+  position: absolute;
+  top: 0.4rem;
+  right: 0rem;
+  box-shadow: none;
+}
+#modalValuesBtn:hover {
+ transform: scale(1.2);
+ color: var(--blue);
+ background-color: transparent;
+ border:0;
+}
+#modalValuesBtn:active {
+  transform: translate(0.1rem, 0.1rem);
+}
+/********************
+    MODALS
+*********************/
+.modal {
+  position: absolute;
+  width: 100%;
+  max-width: 18rem;
+  padding: 0 1rem;
+  top: 18rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 12;
+}
+.modal-container {
+  position: relative;
+  border-radius: 0.2rem;
+  margin: 0 auto;
+  padding-bottom: 1rem;
+  box-shadow: 0.1rem 0.1rem 0.3rem var(--gray-medium);
+  background-color: var(--gray);
+}
+.swatch-btn {
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 0.3rem;
+  border: 0.1rem solid transparent;
+  box-shadow: 0.1rem 0.1rem 0.5rem var(--gray-dark);
+}
+.swatch-btn:hover {
+  box-shadow: none;
+  transform: scale(1.2);
+  border: 0.1rem solid white;
+}
+.swatch-btn-selected {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-color: var(--blue);
+  pointer-events: none;
+  box-shadow: none;
+}
+/*********** modal swatchbook colors ***********/
+.swatchbook-list {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  row-gap: 0.8rem;
+  justify-items: center;
+}
+.savedMessage {
+  position: absolute;
+  top: -2.4rem;
+  left: 50%;
+  width: 70%;
+  border-radius: 0.2rem;
+  padding: 0.3rem 0;
+  transform: translate(-50%);
+  background-color: black;
+  color: rgb(7, 198, 125);
+  box-shadow: 0.1rem 0.1rem 0.4rem var(--gray-medium);
+  opacity: 0;
+  animation: fade 2s ease-out;
+}
+.swatch-custom-disabled {
+  pointer-events: none;
+  box-shadow: none;
+  border: 0.1rem solid white;
+}
+/*********** modal skin colors ***********/
+.skins-list {
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+/************* modal scheme values ***********/
+.modal-values {
+  top: 6.8rem;
+}
+.values-list {
+  padding: 0 1rem;
+  text-align: left;
+}
+.values-list-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+.value-indicator {
+  width: 1.6rem;
+  height: 1.2rem;
+  margin-right: 0.4rem;
+  border-radius: 0.2rem;
+  border: 0.1rem solid white;
+}
+/*********************
+    SCHEME TYPES
+*********************/
+.types {
+  border: 0;
+  padding-bottom: 0;
+}
+legend {
+  margin-bottom: 0.4rem;
+}
+.types div {
+  text-align: left;
+  margin: 0 auto 0.4rem auto;
+  width: 10rem;
+}
+.btn-radio {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  background: var(--gray);
+  border: 0.1rem solid var(--gray);
+  outline: 0.1rem solid var(--blue);
+}
+.btn-radio:hover {
+  border: 0.2rem solid var(--blue-dark) !important;
+  outline: 0.1rem solid var(--blue) !important;
+}
+.btn-radio:checked {
+  background: white !important;
+  border: 0.2rem solid var(--blue) !important;
+  pointer-events: none;
+}
+/********************
+    UTILITIES
+*********************/
+.d-none {
+  display: none;
+}
+@keyframes fade {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+}
